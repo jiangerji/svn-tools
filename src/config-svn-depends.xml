@@ -1,0 +1,18 @@
+<root>
+    <!-- 需要加入hook进行版本处理的svn的root地址 -->
+    <svn-root url="svn://192.168.41.231:7654/repos_esuite">
+        <!-- 需要在提交或更新时，更新版本号的工程svn地址 -->
+        <project url="eUsdk/branches/china-linekong/0.1.2/Native_SDK">
+            <!-- 该工程所在本地目录，没有会自动判断 -->
+            <dir/>
+            <!-- Versions.java文件的包名 -->
+            <name>com.linekong.sdk.util</name>
+            <depends-svn>
+                <url>eUsdk/branches/common/LK_AntiRobot</url>
+                <url>eUsdk/branches/china-linekong/0.1.2/eBilling_v2</url>
+                <url>eUsdk/branches/china-linekong/0.1.2/LK_SDK_RES</url>
+            </depends-svn>
+            <!-- -->
+        </project>
+    </svn-root>
+</root>

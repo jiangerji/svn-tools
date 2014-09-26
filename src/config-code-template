@@ -1,0 +1,13 @@
+/**
+ *  该文件由工具自动生成，请勿手动修改
+ */
+package %s;
+
+public class Versions {
+
+    /**
+     * 当前sdk在svn中的版本号，方便追溯
+     */
+    public final static String verno = "%s";
+
+}
