@@ -7,12 +7,14 @@
             <dir/>
             <!-- Versions.java文件的包名 -->
             <name>com.linekong.sdk.util</name>
+            <!-- 该工程依赖的svn工程 -->
             <depends-svn>
                 <url>eUsdk/branches/common/LK_AntiRobot</url>
                 <url>eUsdk/branches/china-linekong/0.1.2/eBilling_v2</url>
                 <url>eUsdk/branches/china-linekong/0.1.2/LK_SDK_RES</url>
             </depends-svn>
-            <!-- -->
         </project>
+
+        
     </svn-root>
 </root>

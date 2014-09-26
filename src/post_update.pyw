@@ -52,17 +52,12 @@ def post_update():
             lk_sdk_dir  = project["dir"]
             lk_package_name = project["package"]
 
-            # depend_svns = DEPENDS_SVN.get(svn_url)[0]
-            # lk_sdk_svn  = DEPENDS_SVN.get(svn_url)[0][0]
-            # lk_sdk_dir  = DEPENDS_SVN.get(svn_url)[1]
-            # lk_package_name = DEPENDS_SVN.get(svn_url)[2]
-
             if relative_url.find(lk_sdk_svn) >= 0:
                 # 为监控svn下的子目录
                 update_sdk_version = True
                 lk_sdk_dir = cwd[0:-len(relative_url[2+len(lk_sdk_svn):])]
             else:
-                for dsvn in DEPENDS_SVN.get(svn_url)[0]:
+                for dsvn in depend_svns:
                     if relative_url.find(dsvn) >= 0 or dsvn.find(relative_url[2:]) >= 0:
                         update_sdk_version = True
                         break
@@ -89,6 +84,9 @@ def post_update():
 
                                 lk_sdk_dir = os.path.join(par_dir, dirs)
                                 break
+                            else:
+                                if i == length - 1:
+                                    lk_sdk_dir = os.path.join(lk_sdk_dir, os.path.sep.join(sdk_paths[i+1:]))
 
             print lk_sdk_dir, os.path.isdir(lk_sdk_dir)
             print "need update sdk version:", update_sdk_version
