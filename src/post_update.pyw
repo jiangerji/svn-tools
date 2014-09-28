@@ -77,7 +77,7 @@ def post_update():
                             if relatives[i] != sdk_paths[i]:
                                 dirs = os.path.sep.join(sdk_paths[i:])
 
-                                par_dir = cwd
+                                par_dir = cwd 
                                 print i
                                 for j in range(length-i):
                                     par_dir = os.path.dirname(par_dir)
@@ -88,7 +88,7 @@ def post_update():
                                 if i == length - 1:
                                     lk_sdk_dir = os.path.join(lk_sdk_dir, os.path.sep.join(sdk_paths[i+1:]))
 
-            print lk_sdk_dir, os.path.isdir(lk_sdk_dir)
+            print lk_sdk_dir
             print "need update sdk version:", update_sdk_version
 
             if update_sdk_version:
